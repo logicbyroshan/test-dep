@@ -1,14 +1,14 @@
 import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
-
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'os.environ.get('SECRET_KEY', 'unsafe-default-for-local')
+SECRET_KEY = 'os.getenv('SECRET_KEY')
 
 DEBUG = False
 
