@@ -1,0 +1,142 @@
+<!-- START OF FILE project-detail.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project: E-Commerce Platform - Roshan Damor</title>
+
+    <!-- Base Stylesheet (Global styles) -->
+    <link rel="stylesheet" href="../static/css/change.css">
+    
+    <!-- Project Detail Page Specific Stylesheet (Overrides base colors) -->
+    <link rel="stylesheet" href="../static/css/project-dtl.css">
+
+    <!-- Font Awesome for Icons -->
+    <script src="https://kit.fontawesome.com/9da37a3f78.js" crossorigin="anonymous"></script>
+    
+    <!-- Base JS (Navbar, Modal) -->
+    <script src="../static/js/base.js" defer></script>
+
+    <!-- Project Page JS (for scroll animations) -->
+    <script src="../static/js/project.js" defer></script>
+    
+    <!-- Project Detail Page Specific JS (for slider) -->
+    <script src="../static/js/project-detail.js" defer></script>
+</head>
+<body class="project-detail-page"> <!-- Unique class for CSS and JS targeting -->
+    <!-- Particles.js is inherited from base styles -->
+    <!-- ========================= MAIN CONTENT ========================= -->
+    <main>
+        <div class="main-container">
+            <nav class="breadcrumb" data-animation="fade-in-up">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li class="active">E-Commerce Platform</li>
+                </ul>
+            </nav>
+
+            <div class="detail-page-container">
+                <!-- Main Content Column -->
+                <article class="detail-page-main-content">
+                    <header class="detail-page-header" data-animation="fade-in-up">
+                        <span class="tag">Web Development</span>
+                        <span class="tag"><i class="fa-regular fa-calendar-check"></i>Jan 23, 2025</span>
+                        <span class="tag"><i class="fa-solid fa-clock"></i>10 min read</span>
+                    </header>
+
+                    <h1 class="project-title" data-animation="fade-in-up">Building a Modern E-Commerce Platform with Django & React</h1>
+                    <p class="project-description" data-animation="fade-in-up">A deep dive into the architecture and features of a full-stack e-commerce application designed for performance, scalability, and a seamless user experience.</p>
+                    
+                    <!-- Image Slider -->
+                    <div class="hero-image-slider" data-animation="fade-in-up">
+                        <div class="slider">
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?w=1200" alt="Project Screenshot 1"></div>
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1472851294608-062f824d29cc?w=1200" alt="Project Screenshot 2"></div>
+                            <div class="slide"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=1200" alt="Project Screenshot 3"></div>
+                        </div>
+                        <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="next"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                    
+                    <!-- Main Content Body -->
+                    <div class="tiny-mce-content" data-animation="fade-in-up">
+                        <h2>Project Overview & Problem Statement</h2>
+                        <p>The goal was to build a highly performant, scalable e-commerce platform from the ground up. Many existing solutions are either too bloated or lack the flexibility for custom features. This project aimed to solve that by creating a decoupled frontend and backend architecture, allowing for independent development and deployment.</p>
+                        
+                        <h3>The Tech Stack</h3>
+                        <p>We chose Django and Django REST Framework for the backend due to its speed, security, and scalability. For the frontend, React was the obvious choice for building a fast, interactive, and component-based user interface. PostgreSQL was used for its robust data integrity features.</p>
+                        
+                        <img src="https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&h=600&fit=crop" alt="Code on a screen">
+                        
+                        <blockquote>This decoupled approach is the cornerstone of modern web development, providing unparalleled flexibility and maintainability.</blockquote>
+
+                        <h2>Challenges & Solutions</h2>
+                        <ol>
+                            <li><strong>State Management:</strong> Handling a complex global state (cart, user authentication) in React was a challenge. We solved this by implementing Redux Toolkit, which provided a predictable and efficient state container.</li>
+                            <li><strong>API Performance:</strong> Initial API endpoints were slow under load. We optimized database queries using <code>select_related</code> and <code>prefetch_related</code>, and implemented caching with Redis, reducing response times by over 70%.</li>
+                            <li><strong>Secure Payments:</strong> Integrating payments securely is paramount. We offloaded all sensitive credit card processing to Stripe's secure elements, ensuring PCI compliance and user trust.</li>
+                        </ol>
+
+                        <h3>Code Snippet: API Optimization</h3>
+                        <pre><code># Before: Inefficient query causing N+1 problem
+class ProductViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Product.objects.all()
+
+# After: Optimized with prefetching
+class ProductViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = Product.objects.select_related('category').prefetch_related('reviews')</code></pre>
+
+                        <h2>Conclusion & Future Scope</h2>
+                        <p>This project successfully demonstrates the power of combining a robust Python backend with a modern JavaScript frontend. Future plans include implementing a recommendation engine using machine learning and adding support for multiple languages and currencies.</p>
+                    </div>
+                </article>
+
+                <!-- Sidebar -->
+                <aside class="detail-page-sidebar" data-animation="fade-in-up">
+                    <div class="sidebar-card card">
+                        <h3>Project Info</h3>
+                        <div class="project-info-list">
+                           <a href="#" class="filled-btn" style="width: 100%; justify-content: center; color:white;"><i class="fab fa-github"></i> View Source Code</a>
+                           <a href="#" class="outline-btn" style="width: 100%; justify-content: center;"><i class="fas fa-external-link-alt"></i> View Live Site</a>
+                        </div>
+                    </div>
+                    <div class="sidebar-card card">
+                        <h3>Tech Stack</h3>
+                        <div class="project-skills-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">Django</span>
+                            <span class="tag">React</span>
+                            <span class="tag">PostgreSQL</span>
+                            <span class="tag">Stripe API</span>
+                            <span class="tag">Redux</span>
+                        </div>
+                    </div>
+                    <div class="sidebar-card card">
+                        <h3>Author</h3>
+                        <div class="author-info">
+                            <img src="https://i.ibb.co/L5QdF0Y/My-Hero-Img.png" alt="Roshan Damor">
+                            <div>
+                                <h4>Roshan Damor</h4>
+                                <p>Full-Stack Developer</p>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <!-- Re-using the same footer from base.html -->
+    <footer class="site-footer">
+        <!-- Footer content is loaded via the base template -->
+    </footer>
+
+    <!-- Re-using the same modal from base.html -->
+    <div id="resume-modal" class="resume-modal">
+        <!-- Modal content is loaded via the base template -->
+    </div>
+</body>
+</html>

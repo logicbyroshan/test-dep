@@ -1,0 +1,75 @@
+
+    
+    <main>
+        <section id="projects" class="main-container">
+            <div class="projects-container">
+
+                <!-- Section Header -->
+                <header class="portfolio-header" data-animation="fade-in-up">
+                    <h1>My Creative <span>Portfolio</span></h1>
+                    <p>A curated collection of my work, showcasing my skills in web development, UI/UX design, and creating engaging digital experiences. Each project reflects my dedication to quality and innovation.</p>
+                </header>
+
+                <!-- Filtering Toolbar -->
+                <div class="project-toolbar" data-animation="fade-in-up">
+                    <div class="categories-scroller">
+                        <button id="scroll-left" class="scroll-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div id="categories-list" class="categories-list">
+                            <button class="category-badge active">All</button>
+                            <button class="category-badge">Web Development</button>
+                            <button class="category-badge">UI/UX Design</button>
+                            <button class="category-badge">Mobile Apps</button>
+                            <button class="category-badge">Branding</button>
+                            <button class="category-badge">Freelance</button>
+                            <button class="category-badge">Personal</button>
+                        </div>
+                        <button id="scroll-right" class="scroll-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                    <div class="sort-dropdown">
+                        <button id="sort-button">Sort By <i class="fas fa-chevron-down"></i></button>
+                        <ul id="sort-items">
+                            <li><a href="#">Most Recent</a></li>
+                            <li><a href="#">Oldest</a></li>
+                            <li><a href="#">By Name (A-Z)</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div id="project-card-container" class="project-grid">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-url="#" data-animation="fade-in-up">
+                        <div class="project-card-image"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1170" alt="Project 1"></div>
+                        <div class="project-card-content">
+                            <h3>Data Analytics Dashboard</h3>
+                            <p>An interactive dashboard for visualizing complex business intelligence data.</p>
+                            <div class="project-card-tags"><span class="tag">React</span><span class="tag">D3.js</span><span class="tag">Node.js</span></div>
+                            <div class="project-links">
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> View Code</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pagination Controls -->
+                <div class="pagination" data-animation="fade-in-up">
+                    <button id="prev-page" class="pagination-btn"><i class="fas fa-angle-left"></i></button>
+                    <div id="page-numbers"></div>
+                    <button id="next-page" class="pagination-btn"><i class="fas fa-angle-right"></i></button>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Re-using the same modal from base.html -->
+    <div id="resume-modal" class="resume-modal">
+        <div class="modal-content">
+            <div class="modal-header"><h3>My Resume</h3><button id="close-resume-modal-btn" class="close-btn">&times;</button></div>
+            <div class="modal-body"><div class="resume-preview-container"><iframe src="../static/resume/sample-resume.pdf" title="Roshan Damor Resume"></iframe></div></div>
+            <div class="modal-footer"><a href="../static/resume/sample-resume.pdf" download="Roshan_Damor_Resume.pdf" class="filled-btn"><i class="fas fa-download"></i> Download</a></div>
+        </div>
+    </div>
+

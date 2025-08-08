@@ -1,0 +1,274 @@
+{% load static %}
+{% include "portfolio/base.html" %}
+{% block content %}
+    <!-- Particles.js container -->
+    <div class="main-container">
+        <!-- ========================= HERO SECTION ========================= -->
+        <section class="hero-section portfolio-container">
+            <div class="home-container">
+                <div class="home-content" data-animation="fade-in-up">
+                    <p>HIII, IT'S ME</p>
+                    <h1>{{ home.name }}</h1>
+                    <h4>I am a <span id="skill-text">{{ home.work }}</span></h4>
+                    <p>{{ home.bio }}</p>
+                    <div class="home-btns">
+                        <a href="#about" class="outline-btn">ABOUT ME</a>
+                        <a href="#" id="video-resume-btn" class="outline-btn">VIDEO RESUME</a>
+                    </div>
+                </div>
+                <div class="home-hero-image" data-animation="zoom-in">
+                    <img src="{{ home.myimg.url }}" alt="Roshan Damor - Hero Image">
+                    <div class="hero-stat-card stat-1 card" data-animation="fade-in" data-animation-delay="200">
+                        <i class="fa-solid fa-briefcase stat-icon"></i>
+                        <div class="stat-text">
+                            <div class="stat-number">{{ varible }}</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card stat-2 card" data-animation="fade-in" data-animation-delay="400">
+                        <i class="fa-solid fa-user-graduate stat-icon"></i>
+                        <div class="stat-text">
+                            <div class="stat-number">3+</div>
+                            <div class="stat-label">Internships</div>
+                        </div>
+                    </div>
+                    <div class="hero-stat-card stat-3 card" data-animation="fade-in" data-animation-delay="600">
+                        <i class="fa-solid fa-pen-nib stat-icon"></i>
+                        <div class="stat-text">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Articles</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= ABOUT ME SECTION ========================= -->
+        <section id="about" class="about-section portfolio-container card" data-animation="fade-in">
+            <div class="container">
+                <div class="section-title">
+                    <h2>About <span>Me</span></h2>
+                    <p>A passionate developer dedicated to building beautiful, functional, and user-centric digital experiences. I thrive on turning complex problems into elegant solutions.</p>
+                    <a href="#" class="awesome">Know More <i class="fa-solid fa-arrow-right"></i></a>
+
+                </div>
+                <div class="about-content">
+                    <div class="services-column services-column-left">
+                        <div class="service-box box-reverse" data-animation="fade-in-right">
+                            <div class="icon-wrapper"><i class="fas fa-code"></i></div>
+                            <div class="service-text text-reverse">
+                                <h4>Web Development</h4>
+                                <p>Building robust and scalable web applications from front to back.</p>
+                            </div>
+                        </div>
+                        <div class="service-box box-reverse" data-animation="fade-in-right" data-animation-delay="200">
+                            <div class="icon-wrapper"><i class="fas fa-database"></i></div>
+                            <div class="service-text text-reverse">
+                                <h4>Database Management</h4>
+                                <p>Design & manage databases for efficient data storage and retrieval.</p>
+                            </div>
+                        </div>
+                        <div class="service-box box-reverse" data-animation="fade-in-right" data-animation-delay="400">
+                            <div class="icon-wrapper"><i class="fas fa-palette"></i></div>
+                            <div class="service-text text-reverse">
+                                <h4>UI/UX Design</h4>
+                                <p>Designing intuitive and engaging interfaces for user journey.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Image Wrapper with Hover Effect -->
+                    <div class="about-image-wrapper" data-animation="zoom-in">
+                        <img src="{{ home.aboutimg2.url}}" alt="A portrait photo of Roshan Damor" class="about-img-default">
+                        <img src="{{ home.aboutimg1.url}}" alt="A different portrait photo of Roshan Damor" class="about-img-hover">
+                    </div>
+                    <div class="services-column">
+                        <div class="service-box" data-animation="fade-in-left">
+                            <div class="icon-wrapper"><i class="fas fa-robot"></i></div>
+                            <div class="service-text">
+                                <h4>AI Integration</h4>
+                                <p>Leveraging ML to create smarter, data-driven applications.</p>
+                            </div>
+                        </div>
+                        <div class="service-box" data-animation="fade-in-left" data-animation-delay="200">
+                            <div class="icon-wrapper"><i class="fas fa-mobile-screen"></i></div>
+                            <div class="service-text">
+                                <h4>Mobile Development</h4>
+                                <p>Creating responsive and adaptive mobile applications for all devices.</p>
+                            </div>
+                        </div>
+                        <div class="service-box" data-animation="fade-in-left" data-animation-delay="400">
+                            <div class="icon-wrapper"><i class="fas fa-cloud-arrow-up"></i></div>
+                            <div class="service-text">
+                                <h4>DevOps & CI/CD</h4>
+                                <p>Automating deployment pipelines for efficient and reliable software.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= PROJECTS SECTION ========================= -->
+        <section class="projects-section portfolio-container">
+            <header class="portfolio-header" data-animation="fade-in-up">
+                <div class="head">
+                     <h1>Things I've <br><span>Built</span></h1>
+                     <a href="#" class="awesome">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                 <p>"I love turning ideas into reality through code. Each project is a reflection of my skills, problem-solving approach, and creativity."</p>
+            </header>
+            <div class="cards-container">
+            {% for project in projects %}
+                <!-- Project Card 1 -->
+                <div class="project-card card" data-animation="fade-in-up">
+                    <div class="project-image">
+                        <a href="#"><img src="{{ project.thumb.url }}" alt="Project One"></a>
+                    </div>
+                    <div class="project-content">
+                        <h3><a href="#">{{ project.title }}</a></h3>
+                        <p>{{ project.description }}</p>
+                        <div class="skills">
+                            <span class="teg">{{ project.skill }}</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="{{ project.links }}" class="outline-btn"><i class="fa-brands fa-github"></i>Github</a>
+                        <a href="#" class="outline-btn"><i class="fa-solid fa-arrow-up-right-from-square"></i>Live Preview</a>
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+        </section>
+
+        <!-- ========================= SKILLS SECTION ========================= -->
+        <section class="skills-section portfolio-container">
+            <header class="portfolio-header" data-animation="fade-in-up">
+                <div class="head"><h1>My Tech<br><span>Stack</span></h1></div>
+                 <p>"From frontend development to backend architectures, I enjoy leveraging the right tools for the job. Here’s a breakdown of my key skills:"</p>
+            </header>
+            <div class="cards-container">
+            {% for skill in skills %}
+                <div class="skill-card card" data-animation="fade-in-up">
+                    <div class="skill-header"><i class="fa-solid fa-code skill-icon"></i><h3>{{ skill.name }}</h3></div>
+                    <p>{{ skill.description }}</p>
+                    <div class="skill-list">
+                        <img src="{{ skill.icons.url }}" alt="HTML5" title="HTML5">
+                    </div>
+                </div>
+            {% endfor %}
+            </div>
+
+        </section>
+
+        <!-- ========================= EXPERIENCE SECTION ========================= -->
+        <section class="experience-section portfolio-container" data-animation="fade-in">
+            <div class="section-title">
+                <h2>Where I've <span>Worked</span></h2>
+                <p>"I have gained hands-on experience in various roles, contributing to impactful projects and collaborating with talented teams. Here’s a glimpse into my professional journey:"</p>
+            </div>
+            <div class="card-container">
+                <div class="exp-card card" data-url="https://example.com" data-animation="fade-in-up">
+                    <div class="exp-img"><img src="https://placehold.co/80x80/010409/eaeaea?text=TS" alt="Company Logo"></div>
+                    <div class="exp-details">
+                        <div class="exp-header">
+                            <h3>Software Engineer Intern @ Tech Solutions Inc.</h3>
+                            <span>May 2023 - Aug 2023</span>
+                        </div>
+                        <p>Contributed to the development of a scalable web application using React and Node.js, improving API response times by 15%.</p>
+                        <div class="skills"><span class="teg">React</span><span class="teg">Node.js</span><span class="teg">MongoDB</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= BLOGS SECTION ========================= -->
+        <section class="blogs-section portfolio-container">
+            <header class="portfolio-header" data-animation="fade-in-up">
+                <div class="head">
+                     <h1>Latest I've <br><span>Written</span></h1>
+                     <a href="#" class="awesome">View All <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                 <p>"I enjoy sharing insights and experiences through writing. Check out some of my latest posts:"</p>
+            </header>
+            <div class="cards-container">
+                <!-- Blog Card 1 -->
+                <a href="#" class="blog-card card" data-animation="fade-in-up">
+                    <div class="blog-image"><img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&q=80&fm=jpg&crop=entropy" alt="Blog Post One"></div>
+                    <div class="blog-content"><h4>Understanding Asynchronous JavaScript</h4><p>A deep dive into Promises, async/await, and how they make JavaScript more powerful for modern web development.</p></div>
+                    <div class="blog-footer"><div class="publisher"><img src="https://i.ibb.co/L5QdF0Y/My-Hero-Img.png" alt="Author"><span>Roshan Damor</span></div><span class="blog-date">Oct 25, 2023</span></div>
+                </a>
+            </div>
+            <!-- CTA Card -->
+            <div class="cta-container card" data-animation="fade-in">
+                <div class="cta-left-content"><img src="../static/images/newsletter.png" alt="Newsletter Icon" class="cta-image"></div>
+                <div class="cta-right-content">
+                    <form class="cta-form">
+                        <input type="email" placeholder="Enter your E-mail" name="cta-email" required>
+                        <button type="submit" class="outline-btn">SUBSCRIBE</button>
+                    </form>
+                    <div class="cta-success-message" style="display:none;"><p>Thanks for subscribing!</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- ========================= FAQ SECTION ========================= -->
+        <section class="faq-section portfolio-container">
+            <header class="portfolio-header center" data-animation="fade-in-up">
+                <div class="head"><h1>Got Some <br><span>Questions?</span></h1></div>
+                 <p>"Here are some common questions I get asked. If you have more queries, feel free to reach out!"</p>
+            </header>
+            <div class="card-container">
+                <div class="faq-card card" data-animation="fade-in-up">
+                    <div class="faq-question"><span>What are your primary areas of expertise?</span><i class="fa-solid fa-plus faq-icon"></i></div>
+                    <div class="faq-answer"><p>I specialize in full-stack web development, particularly with the Django/Python stack for the backend and React for the frontend. I also have a strong interest and growing experience in AI and Machine Learning applications.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================= CONTACT SECTION ========================= -->
+        <section class="contact-section portfolio-container" data-animation="fade-in">
+            <div class="section-title">
+                <h2>Let's Get <span>Connected!</span></h2>                     
+                <p>"Interested in working together or have a question? I’d love to hear from you! Reach out through the form below."</p>
+            </div>
+            <div class="contact-container card">
+                <div class="mail-contact-card">
+                    <div class="left-contact-info">
+                        <h3>Contact Information</h3>
+                        <p>Have a project in mind or just want to say hello? Feel free to reach out.</p>
+                        <ul class="contact-details-list">
+                            <li><i class="fa-solid fa-phone"></i><span>+12 345 678 90</span></li>
+                            <li><i class="fa-solid fa-envelope"></i><span>roshan.damor@example.com</span></li>
+                            <li><i class="fa-solid fa-location-dot"></i><span>Mumbai, India</span></li>
+                        </ul>
+                    </div>
+                    <div class="right-contact-form">
+                        <form action="#">
+                            <div class="form-group-row">
+                                <div class="form-group"><label for="name">Your Name</label><input type="text" name="name" id="name" required></div>
+                                <div class="form-group"><label for="email">Your Email</label><input type="email" name="email" id="email" required></div>
+                            </div>
+                            <div class="form-group"><label for="subject">Your Subject</label><input type="text" name="subject" id="subject"></div>
+                            <div class="form-group"><label for="contact-message">Message</label><textarea name="message" id="contact-message" rows="4" required></textarea></div>
+                            <button type="submit" class="outline-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div><!-- End of .main-container -->
+
+    <!-- ========================= VIDEO MODAL ========================= -->
+    <div id="video-modal" class="video-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Video Resume</h3>
+                <button id="close-modal-btn" class="close-btn">×</button>
+            </div>
+            <div class="video-container">
+                <iframe id="resume-video-iframe" src="https://www.youtube.com/embed/CA8FeXP61OU?si=QM7hvNxcK4FIHA-6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+{% endblock %}

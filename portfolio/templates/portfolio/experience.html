@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Experiences - Roshan Damor</title>
+
+    <!-- Adjust path if your base.css is in a different folder -->
+    <link rel="stylesheet" href="../base.css"> 
+    <link rel="stylesheet" href="experiences_list.css">
+
+    <script src="https://kit.fontawesome.com/9da37a3f78.js" crossorigin="anonymous"></script>
+    <!-- Adjust path if your portfolio_app.js is in a different folder -->
+    <script src="../experience.js" defer></script>
+</head>
+<body class="experience-list-page">
+    <div class="main-container">
+        <!-- Cards Header -->
+        <div class="cards-header">
+            <h1>All My Experiences</h1>
+
+            <!-- Top Controls: Search and Sort -->
+            <div class="top-controls">
+                <div class="search-bar">
+                    <input type="text" id="experience-search" placeholder="Search by title or technology...">
+                    <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="cards-sort">
+                    <button class="sort-btn" id="sort-button">Sort By <i class="fa-solid fa-caret-down"></i></button>
+                    <div class="sort-items" id="sort-items">
+                        <ul>
+                            <li data-sort="newest">Newest First</li>
+                            <li data-sort="oldest">Oldest First</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Controls: Category Scroller -->
+            <div class="category-scroller">
+                <div class="categories-list" id="categories-list">
+                    <span class="category-badge active" data-category="all">All</span>
+                    <span class="category-badge" data-category="job">Jobs</span>
+                    <span class="category-badge" data-category="internship">Internships</span>
+                    <span class="category-badge" data-category="development">Development</span>
+                    <span class="category-badge" data-category="ai-ml">AI/ML</span>
+                    <span class="category-badge" data-category="design">Design</span>
+                    <span class="category-badge" data-category="devops">DevOps</span>
+                    <span class="category-badge" data-category="freelance">Freelance</span>
+                </div>
+                <div class="scroll-buttons">
+                    <button class="scroll-btn" id="scroll-left"><i class="fa-solid fa-chevron-left"></i></button>
+                    <button class="scroll-btn" id="scroll-right"><i class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Container -->
+        <div class="card-container" id="experience-card-container">
+            <!-- Experience Card 1 -->
+            <div class="exp-card card" data-url="#">
+                <div class="exp-img">
+                    <img src="https://via.placeholder.com/60/94c7ff/001020" alt="Company Logo">
+                </div>
+                <div class="exp-details">
+                    <div class="exp-header">
+                        <h3>Senior AI Engineer @ FutureAI Corp</h3>
+                        <span>Jan 2024 - Present</span>
+                    </div>
+                    <p>Leading the development of a real-time recommendation engine using collaborative filtering and deep learning models, resulting in a 20% increase in user engagement.</p>
+                    <div class="skills">
+                        <span class="teg">Python</span><span class="teg">PyTorch</span><span class="teg">Kubernetes</span><span class="teg">GCP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="exp-card card" data-url="#">
+                <div class="exp-img">
+                    <img src="https://via.placeholder.com/60/94c7ff/001020" alt="Company Logo">
+                </div>
+                <div class="exp-details">
+                    <div class="exp-header">
+                        <h3>Senior AI Engineer @ FutureAI Corp</h3>
+                        <span>Jan 2024 - Present</span>
+                    </div>
+                    <p>Leading the development of a real-time recommendation engine using collaborative filtering and deep learning models, resulting in a 20% increase in user engagement.</p>
+                    <div class="skills">
+                        <span class="teg">Python</span><span class="teg">PyTorch</span><span class="teg">Kubernetes</span><span class="teg">GCP</span>
+                    </div>
+                </div>
+            </div>
+            <div class="exp-card card" data-url="#">
+                <div class="exp-img">
+                    <img src="https://via.placeholder.com/60/94c7ff/001020" alt="Company Logo">
+                </div>
+                <div class="exp-details">
+                    <div class="exp-header">
+                        <h3>Senior AI Engineer @ FutureAI Corp</h3>
+                        <span>Jan 2024 - Present</span>
+                    </div>
+                    <p>Leading the development of a real-time recommendation engine using collaborative filtering and deep learning models, resulting in a 20% increase in user engagement.</p>
+                    <div class="skills">
+                        <span class="teg">Python</span><span class="teg">PyTorch</span><span class="teg">Kubernetes</span><span class="teg">GCP</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more cards... -->
+        </div>
+
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <button class="page-btn" id="prev-page" disabled><i class="fa-solid fa-arrow-left"></i></button>
+            <div class="page-numbers" id="page-numbers"></div>
+            <button class="page-btn" id="next-page"><i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </div>
+</body>
+</html>
